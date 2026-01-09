@@ -1,0 +1,13 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: client
+    restart: unless-stopped
+    networks:
+      - proxied
+
+networks:
+  proxied:
+    external: true
